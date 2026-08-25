@@ -46,7 +46,7 @@
     <div id="skip-link" class="container-fluid bg-warning py-2 d-none"><a class="text-black" href="#content">Skip to main content</a></div>
     <div class="w-100 bg-blue">
       <div class="text-white text-center py-2 px-3">
-        <strong>We welcome feedback from users through our <a href="https://dttselfserve.nidirect.gov.uk/NISRA/RateIt#/Data_Explorer" target="_blank" rel="noopener" title="RateIt Survey (opens in new tab)">short survey</a></use></strong>
+        <strong>We welcome feedback from users through our <a href="https://dttselfserve.nidirect.gov.uk/NISRA/RateIt#/NI_Historical_Data_Explorer" target="_blank" rel="noopener" title="RateIt Survey (opens in new tab)">short survey</a></use></strong>
       </div>
     </div>
 
@@ -62,7 +62,7 @@
       <!-- Heading (right) -->
        <div class="col">
         <h1 class="mb-0 pe-2 text-white app-title ms-2 text-center text-lg-end">
-          Data Explorer
+          Centre for Economics, Policy & History Data Explorer
       </h1>
       </div>
 
@@ -131,13 +131,15 @@
                 Select topic
               </div>
               <div class="card-body pt-3 px-1 vstack gap-3">
-              <div>
-                <label for="theme" class="form-label">Theme</label>
-                <select id="theme" name="theme" class="form-select" aria-label="Select theme"></select>
-              </div>
-              <div>
-                <label for="subject" class="form-label">Subtheme</label>
-                <select id="subject" name="subject" class="form-select" aria-label="Select subtheme"></select>
+              <div class="d-none">
+                      <div>
+                        <label for="theme" class="form-label">Theme</label>
+                        <select id="theme" name="theme" class="form-select" aria-label="Select theme"></select>
+                      </div>
+                      <div>
+                        <label for="subject" class="form-label">Subtheme</label>
+                        <select id="subject" name="subject" class="form-select" aria-label="Select subtheme"></select>
+                      </div>
               </div>
               <div>
                 <label for="product" class="form-label">Subject</label>
@@ -148,7 +150,7 @@
                 <select id="name" name="name" class="form-select" aria-label="Select table"></select>
               </div>
               <div class="d-none">
-                <label for="geo" class="form-label">Geography/Type</label>
+                <label for="geo" class="form-label">Type</label>
                 <select id="geo" name="geo" class="form-select" aria-label="Select geography or type"></select>
               </div>
               <div>
@@ -189,14 +191,6 @@
           <div class="d-flex justify-content-between align-items-center mb-3">
 
             <div>
-              <nav aria-label="breadcrumb">
-                        <ol id="breadcrumb" class="breadcrumb mb-0 mt-2 mb-2">
-                          <li id="nav-theme" class="breadcrumb-item"></li>
-                          <li id="nav-subject" class="breadcrumb-item"></li>
-                          <li id="nav-product" class="breadcrumb-item"></li>
-                        </ol>
-                      </nav>
-
               <h2 id="table-title" class="fs-3 fw-bold"s></h2>
             </div>
 

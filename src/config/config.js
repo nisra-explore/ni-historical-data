@@ -1,5 +1,5 @@
 // Default data to show on page load
-export const default_table = "MYE01T04";
+export const default_table = "CEPHNI04";
 
 // Lookup for geojson files
 export const GEOG_PROPS= {
