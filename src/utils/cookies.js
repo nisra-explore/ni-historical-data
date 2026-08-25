@@ -76,7 +76,7 @@ export function initCookieConsent(options = {}) {
   cookieBanner.classList.add('cookies-infobar');
   cookieBanner.innerHTML = `
     <div class="container">
-      <p><strong>Cookies on the NISRA Data Explorer</strong></p>
+      <p><strong>Cookies on the NI Historical Data Explorer</strong></p>
       <p>
         This prototype web page places small amounts of information known as cookies on your device.
         <a href="https://www.nisra.gov.uk/cookies"
