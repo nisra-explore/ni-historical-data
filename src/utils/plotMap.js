@@ -16,6 +16,7 @@ import { addOtherMenus, id_vars, other_selections, other_headline,
          other_vars, subtitle_text } from "./addOtherMenus.js";
 import { dataPortalPreview } from "./dataPortalPreview.js";
 import { chartDownload } from "./chart-download.js";
+import { renamePage } from "./renamePage.js";
 
 export let map;
 
@@ -451,8 +452,10 @@ export async function plotMap (tables, geog_type) {
         }
 
         table_title.textContent = tables[matrix].name;
+
+        page_title.textContent = renamePage(tables[matrix].name);
         
-        page_title.textContent = `NISRA Data Explorer - ${tables[matrix].name}`;
+        // page_title.textContent = `NISRA Data Explorer - ${tables[matrix].name}`;
 
         nav_theme.textContent = tables[geo_menu.value].theme;        
         nav_subject.textContent = tables[geo_menu.value].subject;    

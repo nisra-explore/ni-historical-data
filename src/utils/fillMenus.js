@@ -181,7 +181,7 @@ export function fillGeoMenu (structure, tables, search) {
 
     }
 
-    if (num_options > 0) {
+    if (num_options > 1) {
         geo_menu.parentElement.classList.add("d-block");
         geo_menu.parentElement.classList.remove("d-none");
     } else {
@@ -211,9 +211,19 @@ export function fillStatMenu (tables, search) {
 
     stats_menu.replaceChildren();
 
-    let statistics = tables[geo_menu.value].statistics;
+    const statistics = tables[geo_menu.value].statistics;
 
-    for (let i = 0; i < Object.keys(statistics).length; i ++) {
+    const num_stats = Object.keys(statistics).length;
+
+    if (num_stats > 1) {
+        stats_menu.parentElement.classList.add("d-block");
+        stats_menu.parentElement.classList.remove("d-none");
+    } else {
+        stats_menu.parentElement.classList.add("d-none");
+        stats_menu.parentElement.classList.remove("d-block");
+    }
+
+    for (let i = 0; i < num_stats; i ++) {
         let option = document.createElement("option");
         option.value = Object.keys(statistics)[i];
         option.textContent = Object.values(statistics)[i];
