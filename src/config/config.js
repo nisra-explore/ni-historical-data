@@ -1,5 +1,5 @@
 // Metadata json file name. If forking do not use "data-portal-tables"
-export const meta_name = "data-portal-tables";
+export const meta_name = "data-portal-historic-tables";
 
 // Default data to show on page load
 export const default_table = "CEPHNI04";
