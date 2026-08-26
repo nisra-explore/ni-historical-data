@@ -5,6 +5,7 @@ import { fillSubjectsMenu, fillProductsMenu, fillNamesMenu, fillGeoMenu, fillSta
 import { firstKey } from "./firstKey.js"
 import { themes_menu, subjects_menu, products_menu, names_menu, geo_menu, stats_menu, SIDEBAR_OPEN_KEY, getSearch } from "./elements.js";
 import { refreshRoute } from "./refreshRoute.js";
+import { meta_name } from "../config/config.js";
 
 let tables = {};
 let _searchIndex = [];
@@ -12,7 +13,7 @@ let _searchIndex = [];
 export async function createMenus () {
 
     try {
-    let data = await loadTables();  // ← cached load
+    let data = await loadTables(meta_name);  // ← cached load
     tables = data.tables;
     // Build global search index
     let searchIndex = Object.keys(tables).map(key => {

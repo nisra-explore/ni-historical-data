@@ -1,5 +1,16 @@
 library(jsonlite)
 library(dplyr)
+library(V8)
+
+# Read configuration and extract meta file name
+config_file <- readLines("src/config/config.js", warn = FALSE) %>%
+  sub("export ", "", .) %>%
+  paste(., collapse = "\n")
+
+ctx <- V8::v8()
+ctx$eval(config_file)
+meta_name <- ctx$get("meta_name")
+
 
 api_key <- "801aaca4bcf0030599c019f4efa8b89032e5e6aa1de4a629a7f7e9a86db7fb8c"
 
@@ -218,6 +229,6 @@ tables$tables <- tables$tables[order(names(tables$tables))]
 
 
 write_json(tables,
-           "public/data/data-portal-tables.json",
+           paste0("public/data/", meta_name, ".json"),
            auto_unbox = TRUE,
            pretty = TRUE)

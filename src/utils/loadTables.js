@@ -1,5 +1,7 @@
+import { meta_name } from "../config/config.js";
+
 // Named export of an async function
-const TABLES_CACHE_KEY = "nisra:tables:v1";     // bump v1→v2 if schema changes
+const TABLES_CACHE_KEY = `${meta_name}:tables:v1`;     // bump v1→v2 if schema changes
 const TABLES_TTL_MS    = 60 * 60 * 1000;        // 1 hour
 
 export function readCachedTables(allowStale = false) {
@@ -20,7 +22,10 @@ export function writeCachedTables(data) {
   } catch { /* storage may be full or blocked; ignore */ }
 }
 
-export async function loadTables(url = "public/data/data-portal-tables.json") {
+export async function loadTables(json) {
+
+  const url = `public/data/${json}.json`;
+
   const fresh = readCachedTables(false);
   if (fresh) return fresh;
 

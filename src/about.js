@@ -3,6 +3,7 @@ import { sharePage } from "./utils/sharePage.js";
 import { loadTables } from "./utils/loadTables.js";
 import { initCookieConsent } from "./utils/cookies.js";
 import "./utils/skipToMainContent.js";
+import { meta_name } from "./config/config.js"
 
 window.addEventListener("DOMContentLoaded", async () => {
     for (let i = 0; i < share_btn.length; i++) {
@@ -10,7 +11,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        let tables = await loadTables();  // ← cached load
+        let tables = await loadTables(meta_name);  // ← cached load
         document.getElementById("num-tables").innerText = tables.table_count.toLocaleString();
 
         initCookieConsent({
