@@ -144,8 +144,8 @@ export async function chartDownload (capture_id, matrix, subject_code, product_c
             </button>
             
             <ul class="dropdown-menu" aria-labelledby="${capture_id}-dropdown">
-                <li><a class="dropdown-item" href="https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.PxAPIv1/en/${subject_code}/${product_code}/${matrix}?query=${csv_query_string}">data (in CSV format)</a></li>
-                <li><a class="dropdown-item" href="https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.PxAPIv1/en/${subject_code}/${product_code}/${matrix}?query=${xl_query_string}">data (in Excel format)</a></li>
+                <li><a class="dropdown-item" href="https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.PxAPIv1/en/${subject_code}/${product_code}/${matrix}?query=${csv_query_string}">${plot_type} data (in CSV format)</a></li>
+                <li><a class="dropdown-item" href="https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.PxAPIv1/en/${subject_code}/${product_code}/${matrix}?query=${xl_query_string}">${plot_type} data (in Excel format)</a></li>
                 <li><a class="dropdown-item" href="#" id="download-${capture_id}">${plot_type} (as image)</a></li>
             </ul>
             </div>
