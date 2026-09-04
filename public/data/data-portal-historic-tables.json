@@ -3946,22 +3946,16 @@
     },
     "CEPHNI41": {
       "name": "Indictable and non-indictable offences",
-      "updated": "2026-08-27",
+      "updated": "2026-09-04",
       "categories": {
         "STATISTIC": {
           "category": {
-            "index": ["NOI", "NONI"],
+            "index": "OFF",
             "label": {
-              "NOI": "Indictable offences",
-              "NONI": "Non-indictable offences"
+              "OFF": "Offence"
             },
             "unit": {
-              "NOI": {
-                "decimals": 0,
-                "label": "Number",
-                "position": "end"
-              },
-              "NONI": {
+              "OFF": {
                 "decimals": 0,
                 "label": "Number",
                 "position": "end"
@@ -4044,19 +4038,19 @@
           },
           "label": "Year"
         },
-        "N92000002": {
+        "OT": {
           "category": {
-            "index": "N92000002",
+            "index": ["1", "2"],
             "label": {
-              "N92000002": "Northern Ireland"
+              "1": "Indictable offence",
+              "2": "Non-indictable offence"
             }
           },
-          "label": "Northern Ireland"
+          "label": "Offence type"
         }
       },
       "statistics": {
-        "NOI": "Indictable offences",
-        "NONI": "Non-indictable offences"
+        "OFF": "Offence"
       },
       "time": "TLIST(A1)",
       "time_series": ["1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994"],
@@ -4362,46 +4356,16 @@
     },
     "CEPHNI45": {
       "name": "Road lengths",
-      "updated": "2026-08-27",
+      "updated": "2026-09-04",
       "categories": {
         "STATISTIC": {
           "category": {
-            "index": ["PR", "MW", "C1", "C2", "C3", "UC"],
+            "index": "RL",
             "label": {
-              "PR": "Public roads",
-              "MW": "Motorways",
-              "C1": "Class 1 type roads",
-              "C2": "Class 2 type roads",
-              "C3": "Class 3 type roads",
-              "UC": "Unclassified roads"
+              "RL": "Road length"
             },
             "unit": {
-              "PR": {
-                "decimals": 0,
-                "label": "Miles",
-                "position": "end"
-              },
-              "MW": {
-                "decimals": 0,
-                "label": "Miles",
-                "position": "end"
-              },
-              "C1": {
-                "decimals": 0,
-                "label": "Miles",
-                "position": "end"
-              },
-              "C2": {
-                "decimals": 0,
-                "label": "Miles",
-                "position": "end"
-              },
-              "C3": {
-                "decimals": 0,
-                "label": "Miles",
-                "position": "end"
-              },
-              "UC": {
+              "RL": {
                 "decimals": 0,
                 "label": "Miles",
                 "position": "end"
@@ -4453,23 +4417,23 @@
           },
           "label": "Year"
         },
-        "N92000002": {
+        "RT": {
           "category": {
-            "index": "N92000002",
+            "index": ["1", "2", "3", "4", "5", "6"],
             "label": {
-              "N92000002": "Northern Ireland"
+              "1": "Public roads",
+              "2": "Motorways",
+              "3": "Class 1 type roads",
+              "4": "Class 2 type roads",
+              "5": "Class 3 type roads",
+              "6": "Unclassified roads"
             }
           },
-          "label": "Northern Ireland"
+          "label": "Road type"
         }
       },
       "statistics": {
-        "PR": "Public roads",
-        "MW": "Motorways",
-        "C1": "Class 1 type roads",
-        "C2": "Class 2 type roads",
-        "C3": "Class 3 type roads",
-        "UC": "Unclassified roads"
+        "RL": "Road length"
       },
       "time": "TLIST(A1)",
       "time_series": ["1939", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995"],
@@ -5942,40 +5906,16 @@
     },
     "CEPHNI61": {
       "name": "Telephone services",
-      "updated": "2026-08-27",
+      "updated": "2026-09-04",
       "categories": {
         "STATISTIC": {
           "category": {
-            "index": ["TSK", "TSEC", "TSES", "TSCA", "TSTC"],
+            "index": "TS",
             "label": {
-              "TSK": "Telephone services: kiosk",
-              "TSEC": "Telephone services: exchange connections",
-              "TSES": "Telephone services: exchange stations",
-              "TSCA": "Telephone services: connections added",
-              "TSTC": "Telephone services: trunk calls"
+              "TS": "Telephone service"
             },
             "unit": {
-              "TSK": {
-                "decimals": 0,
-                "label": "Number",
-                "position": "end"
-              },
-              "TSEC": {
-                "decimals": 0,
-                "label": "Number",
-                "position": "end"
-              },
-              "TSES": {
-                "decimals": 0,
-                "label": "Number",
-                "position": "end"
-              },
-              "TSCA": {
-                "decimals": 0,
-                "label": "Number",
-                "position": "end"
-              },
-              "TSTC": {
+              "TS": {
                 "decimals": 0,
                 "label": "Number",
                 "position": "end"
@@ -6016,22 +5956,22 @@
           },
           "label": "Year"
         },
-        "N92000002": {
+        "ST": {
           "category": {
-            "index": "N92000002",
+            "index": ["1", "2", "3", "4", "5"],
             "label": {
-              "N92000002": "Northern Ireland"
+              "1": "Kiosks",
+              "2": "Exchange connections",
+              "3": "Exchange stations",
+              "4": "Connections added",
+              "5": "Trunk calls"
             }
           },
-          "label": "Northern Ireland"
+          "label": "Service type"
         }
       },
       "statistics": {
-        "TSK": "Telephone services: kiosk",
-        "TSEC": "Telephone services: exchange connections",
-        "TSES": "Telephone services: exchange stations",
-        "TSCA": "Telephone services: connections added",
-        "TSTC": "Telephone services: trunk calls"
+        "TS": "Telephone service"
       },
       "time": "TLIST(A1)",
       "time_series": ["1949", "1950", "1951", "1952", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1968", "1969", "1971", "1972", "1973", "1974", "1975", "1976"],
@@ -6045,22 +5985,16 @@
     },
     "CEPHNI62": {
       "name": "Wireless receiving licences",
-      "updated": "2026-08-27",
+      "updated": "2026-09-04",
       "categories": {
         "STATISTIC": {
           "category": {
-            "index": ["WRLS", "WRLT"],
+            "index": "WRL",
             "label": {
-              "WRLS": "Wireless receiving licence: sound",
-              "WRLT": "Wireless receiving licence: television"
+              "WRL": "Wireless receiving licence"
             },
             "unit": {
-              "WRLS": {
-                "decimals": 0,
-                "label": "Number",
-                "position": "end"
-              },
-              "WRLT": {
+              "WRL": {
                 "decimals": 0,
                 "label": "Number",
                 "position": "end"
@@ -6112,19 +6046,19 @@
           },
           "label": "Year"
         },
-        "N92000002": {
+        "LT": {
           "category": {
-            "index": "N92000002",
+            "index": ["1", "2"],
             "label": {
-              "N92000002": "Northern Ireland"
+              "1": "Sound",
+              "2": "Television"
             }
           },
-          "label": "Northern Ireland"
+          "label": "Licence type"
         }
       },
       "statistics": {
-        "WRLS": "Wireless receiving licence: sound",
-        "WRLT": "Wireless receiving licence: television"
+        "WRL": "Wireless receiving licence"
       },
       "time": "TLIST(A1)",
       "time_series": ["1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961"],
