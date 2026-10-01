@@ -131,8 +131,8 @@
       "theme_code": 65,
       "subject": "Centre for Economics, Policy & History, Trinity College Dublin",
       "subject_code": 170,
-      "product": "Statistical abstracts - Historical series",
-      "product_code": "CEPH",
+      "product": "Environment and climate",
+      "product_code": "CEPHEC",
       "rows": 83
     },
     "CEPHNI03": {
@@ -422,8 +422,8 @@
       "theme_code": 65,
       "subject": "Centre for Economics, Policy & History, Trinity College Dublin",
       "subject_code": 170,
-      "product": "Statistical abstracts - Historical series",
-      "product_code": "CEPH",
+      "product": "People and communities",
+      "product_code": "CEPHPC",
       "rows": 81
     },
     "CEPHNI05": {
@@ -646,8 +646,8 @@
       "theme_code": 65,
       "subject": "Centre for Economics, Policy & History, Trinity College Dublin",
       "subject_code": 170,
-      "product": "Statistical abstracts - Historical series",
-      "product_code": "CEPH",
+      "product": "Environment and climate",
+      "product_code": "CEPHEC",
       "rows": 55
     },
     "CEPHNI07": {
@@ -740,8 +740,8 @@
       "theme_code": 65,
       "subject": "Centre for Economics, Policy & History, Trinity College Dublin",
       "subject_code": 170,
-      "product": "Statistical abstracts - Historical series",
-      "product_code": "CEPH",
+      "product": "Environment and climate",
+      "product_code": "CEPHEC",
       "rows": 43
     },
     "CEPHNI08": {
@@ -874,8 +874,8 @@
       "theme_code": 65,
       "subject": "Centre for Economics, Policy & History, Trinity College Dublin",
       "subject_code": 170,
-      "product": "Statistical abstracts - Historical series",
-      "product_code": "CEPH",
+      "product": "Environment and climate",
+      "product_code": "CEPHEC",
       "rows": 83
     },
     "CEPHNI09": {
@@ -1008,8 +1008,8 @@
       "theme_code": 65,
       "subject": "Centre for Economics, Policy & History, Trinity College Dublin",
       "subject_code": 170,
-      "product": "Statistical abstracts - Historical series",
-      "product_code": "CEPH",
+      "product": "Environment and climate",
+      "product_code": "CEPHEC",
       "rows": 83
     },
     "CEPHNI10": {
@@ -1142,8 +1142,8 @@
       "theme_code": 65,
       "subject": "Centre for Economics, Policy & History, Trinity College Dublin",
       "subject_code": 170,
-      "product": "Statistical abstracts - Historical series",
-      "product_code": "CEPH",
+      "product": "Environment and climate",
+      "product_code": "CEPHEC",
       "rows": 83
     },
     "CEPHNI100": {
@@ -1582,8 +1582,8 @@
       "theme_code": 65,
       "subject": "Centre for Economics, Policy & History, Trinity College Dublin",
       "subject_code": 170,
-      "product": "Statistical abstracts - Historical series",
-      "product_code": "CEPH",
+      "product": "Environment and climate",
+      "product_code": "CEPHEC",
       "rows": 82
     },
     "CEPHNI12": {
