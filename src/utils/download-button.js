@@ -1,4 +1,4 @@
-import { download_btn, capture } from "./elements.js";
+import { download_dropdown, capture } from "./elements.js";
 import { map } from "./plotMap.js";
 
 /**
@@ -12,12 +12,10 @@ import { map } from "./plotMap.js";
 let activeCaptureToken = null;
 
 export function downloadButton(matrix) {
-  download_btn.innerHTML += `
-    <ul class="dropdown-menu" aria-labelledby="capture-dropdown">
-      <li><a class="dropdown-item" href="https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/${matrix}/CSV/1.0/">data (in CSV format)</a></li>
-      <li><a class="dropdown-item" href="https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/${matrix}/XLSX/2007/">data (in Excel format)</a></li>
-      <li><a class="dropdown-item" href="#" id="download-capture">charts (as image)</a></li>
-    </ul>
+  download_dropdown.innerHTML = ` 
+    <li><a class="dropdown-item" href="https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/${matrix}/CSV/1.0/">data (in CSV format)</a></li>
+    <li><a class="dropdown-item" href="https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/${matrix}/XLSX/2007/">data (in Excel format)</a></li>
+    <li><a class="dropdown-item" href="#" id="download-capture">charts (as image)</a></li>
   `;
 
   document.getElementById("download-capture").addEventListener("click", async (e) => {

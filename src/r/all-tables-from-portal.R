@@ -11,6 +11,9 @@ ctx <- V8::v8()
 ctx$eval(config_file)
 meta_name <- ctx$get("meta_name")
 
+tables <- fromJSON(paste0("public/data/", meta_name, ".json"))
+last_run <- tables$last_run
+current_time <- format(Sys.time(), "%Y-%m-%dT%H:%M:%OS3Z", tz = "UTC")
 
 api_key <- "801aaca4bcf0030599c019f4efa8b89032e5e6aa1de4a629a7f7e9a86db7fb8c"
 
@@ -136,8 +139,11 @@ data_portal <- jsonlite::fromJSON(
 
 associated_tables <- read.csv("public/data/associated-tables.csv")
 
-tables <- list(table_count = nrow(data_portal),
-               tables = list())
+tables$last_run <- current_time
+tables$table_count <- nrow(data_portal)
+
+data_portal <- data_portal %>%
+  filter(updated > last_run)
 
 for (i in seq_along(data_portal$label)) {
   

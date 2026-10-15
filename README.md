@@ -7,56 +7,82 @@ The app provides an interactive interface for browsing, visualising, and downloa
 
 ## 📁 Project Structure
 
-assets/ _Static front-end assets_\
-├── css/ _Stylesheets_\
-│ └── styles.css _Custom CSS for layout, typography, branding_\
-└── img/ _Images and icons_\
-├── icon/ _Favicons and Apple/Android touch icons_\
-└── logo/ _Logos and social media icons_
-
-public/ _Publicly served data and maps_\
-├── data/ _Data files generated externally_\
-│ ├── associated-tables.csv\
-│ └── data-portal-tables.json _Main JSON powering menus & search_\
-└── map/ _GeoJSON boundaries for maps_\
-├── AA.geo.json\
-├── LGD2014.geo.json\
-└── … (other geography files)
-
-src/ _Application source code_\
-├── config/ _App-wide configuration_\
-│ └── config.js _Default settings and geography properties_\
-├── utils/ _Modular JavaScript utilities_\
-│ ├── createMenus.js _Build dropdown menus from JSON_\
-│ ├── elements.js _Central place for DOM element refs_\
-│ ├── fillMenus.js _Logic to populate menu options_\
-│ ├── firstKey.js _Helper to return first key of object_\
-│ ├── getColour.js _Map data → colour scale for maps_\
-│ ├── initSideBarPersistence.js _Persists sidebar open/closed state_\
-│ ├── loadShapes.js _Fetch & cache GeoJSON map layers_\
-│ ├── loadTables.js _Fetch & cache tables JSON (with TTL)_\
-│ ├── mapSelections.js _Handle selection state & calls plotMap_\
-│ ├── plotMap.js _Main map + chart rendering logic_\
-│ ├── quantile.js _Helper for quintile calculations_\
-│ ├── sortObject.js _Recursively sort nested objects_\
-│ ├── syncDraggingToZoom.js _Leaflet: control drag based on zoom_\
-│ ├── titleCase.js _Utility to normalise labels/titles_\
-│ ├── wireSearch.js _Global search input wiring_\
-│ ├── wrapLabel.js _Line wrapping for axis labels_\
-│ └── yAxisLabelPlugin.js _Chart.js plugin for Y-axis label drawing_\
-├── index.js _Main entrypoint (imports and wires everything)_\
-└── r/ _R scripts for data preparation_\
-└── all-tables-from-portal.R _Downloads & builds data-portal-tables.json_
-
-index.html _Main HTML document_\
-data portal maps.Rproj _RStudio project file for working with R scripts_
+```text
+.
+├── .github/
+│   └── workflows/
+│       └── update.yml            # Scheduled refresh for portal metadata
+├── .vscode/
+│   └── settings.json             # Editor settings for the project
+├── assets/
+│   ├── css/
+│   │   └── styles.css            # Global styling and layout rules
+│   └── img/
+│       ├── icon/                 # Favicon and touch icons
+│       └── logo/                 # Brand and social media logos
+├── public/
+│   ├── data/
+│   │   ├── associated-tables.csv # Supporting table metadata
+│   │   └── data-portal-tables.json # Main table catalog used by the app
+│   └── map/
+│       ├── AA.geo.json
+│       ├── AA2024.geo.json
+│       ├── COB.geo.json
+│       ├── LGD2014.geo.json
+│       ├── NUTS3.geo.json
+│       ├── SA2011.geo.json
+│       ├── style-omt.json
+│       └── ...                   # Additional GeoJSON geography files
+├── src/
+│   ├── about.js                  # Script for the about page
+│   ├── config/
+│   │   └── config.js             # App configuration and geography defaults
+│   ├── index.js                  # Main app bootstrap and wiring
+│   ├── r/
+│   │   └── all-tables-from-portal.R # Refreshes table metadata from NISRA portal
+│   └── utils/
+│       ├── addOtherMenus.js      # Additional menu population logic
+│       ├── buildCharts.js        # Chart assembly and rendering
+│       ├── buildTables.js        # Table construction for selected data
+│       ├── chart-download.js     # Export chart images/data
+│       ├── clearElements.js      # DOM cleanup helpers
+│       ├── cookies.js           # Cookie-based state persistence
+│       ├── createMenus.js        # Build dropdown menus from JSON data
+│       ├── dataPortalPreview.js  # Preview metadata and table selection helpers
+│       ├── download-button.js    # Download button logic
+│       ├── elements.js           # Shared DOM references
+│       ├── fillMenus.js          # Populate menu options
+│       ├── firstKey.js           # Helper for first-key access
+│       ├── getColour.js          # Map/chart colour scales
+│       ├── initSideBarPersistence.js # Persist sidebar state
+│       ├── loadShapes.js         # Fetch and cache GeoJSON layers
+│       ├── loadTables.js         # Fetch and cache JSON tables with TTL logic
+│       ├── mapSelections.js      # Handle map/table selection state
+│       ├── plotMap.js            # Main map/chart rendering logic
+│       ├── quantile.js           # Quintile-related utility
+│       ├── refreshRoute.js       # URL/hash route refresh logic
+│       ├── renamePage.js         # Update page titles/metadata
+│       ├── sharePage.js          # Shareable link generation
+│       ├── skipToMainContent.js  # Accessibility skip-link helper
+│       ├── sortObject.js         # Recursive object sorting
+│       ├── titleCase.js          # Label formatting utility
+│       ├── wireSearch.js         # Global search wiring
+│       ├── wrapLabel.js          # Axis label wrapping helper
+│       └── yAxisLabelPlugin.js   # Chart.js axis label plugin
+├── .gitignore                    # Git ignore rules
+├── about.html                    # About page markup
+├── data-explorer.Rproj           # RStudio project file
+├── index.html                    # Main application shell
+├── README.md                     # Project documentation
+└── .Rhistory                     # Local R session history
+```
 
 ---
 
 ## 🔑 Key Concepts
 
-- **`index.html`** is the only HTML page; it loads `src/index.js` (ES module).
-- **`src/index.js`** is the coordinator: imports modules from `utils/`, wires events, and bootstraps the app.
+- **`index.html`** is the main application page, and **`about.html`** provides the separate about page; both load their corresponding JS modules.
+- **`src/index.js`** is the main coordinator: imports modules from `utils/`, wires events, and bootstraps the app.
 - **`utils/`** contains small single-purpose modules. Each utility handles a well-defined task (menus, search, maps, charts).
 - **`public/data/`** and **`public/map/`** are data sources fetched at runtime by the browser.  
   - `data-portal-tables.json` is regenerated regularly by the R script.
@@ -69,7 +95,7 @@ data portal maps.Rproj _RStudio project file for working with R scripts_
 ## ⚙️ Workflow
 
 1. **Development**
-   - Edit `index.html`, `src/` JS modules, or `assets/css/styles.css`.
+   - Edit `index.html`, `about.html`, `src/` JS modules, or `assets/css/styles.css`.
    - Static data (e.g. JSON, GeoJSON) lives under `public/`.
 
 2. **Data refresh**

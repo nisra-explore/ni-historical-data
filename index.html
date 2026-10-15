@@ -181,14 +181,15 @@
       <main id="content" tabindex="-1" class="col-12 col-lg-9 col-xxl-10">
         <div class="py-4">
 
-          <div id="buttons" class="d-flex gap-2 justify-content-end mt-2">
+          <div id="buttons" class="d-flex gap-2 justify-content-end">
                       <button class="btn btn-primary" type="button" alt="About this dashboard" aria-label="About this tool (opens About page)" onclick="window.location.href='./about.html'">About</button>
                       <div id="download-btn" class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="capture-dropdown" aria-label="Download dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                           Download
                         </button>
+                        <ul id="download-dropdown" class="dropdown-menu" aria-labelledby="capture-dropdown"></ul>
                       </div>
-                      <button class="btn btn-primary" type="button" alt="Share this page" aria-label="Share this page">Share</button>
+                      <button id="share-btn"class="btn btn-primary" type="button" alt="Share this page" aria-label="Share this page">Share</button>
             </div>
 
           <div class="d-flex justify-content-between align-items-center mb-3">

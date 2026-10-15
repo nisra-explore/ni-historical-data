@@ -22,14 +22,12 @@ window.addEventListener("DOMContentLoaded", async () => {
     wireSearch(searchIndex);
     initSidebarPersistence();
     
-    for (let i = 0; i < share_btn.length; i++) {
-      share_btn[i].onclick = sharePage;
-    }
+    share_btn.onclick = sharePage;
 
-      initCookieConsent({
-        bannerId: 'cookie-banner',
-        gtmId: 'GTM-WKK8ZWP'
-      });
+    initCookieConsent({
+      bannerId: 'cookie-banner',
+      gtmId: 'GTM-WKK8ZWP'
+    });
 
   } catch (e) {
     console.error("Startup failed:", e);
