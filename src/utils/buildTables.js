@@ -84,30 +84,61 @@ export async function buildTables(tables, matrix, statistic, geog_type, year, ti
                 return;
             }
 
-            for (let j = 0; j < values.length; j ++) {
+            const rows = result.dimension[other_vars[i]].category.index.map((code, idx) => ({
+                code,
+                label: result.dimension[other_vars[i]].category.label[code],
+                value: values[idx]
+            }));
+
+            // Move ALL / NI totals to the bottom
+            rows.sort((a, b) => {
+
+                const aIsTotal =
+                    ["ALL", "NI", "N92000002"].includes(a.code.toUpperCase());
+
+                const bIsTotal =
+                    ["ALL", "NI", "N92000002"].includes(b.code.toUpperCase());
+
+                if (aIsTotal && !bIsTotal) return 1;
+                if (!aIsTotal && bIsTotal) return -1;
+
+                return 0;
+            });
+
+            for (const row of rows) {
+
                 let tr = document.createElement("tr");
 
                 let td_0 = document.createElement("td");
-                td_0.textContent = Object.values(result.dimension[other_vars[i]].category.label)[j];
+                td_0.textContent = row.label;
                 tr.appendChild(td_0);
 
                 let td_1 = document.createElement("td");
-                if (values[j] == null) {
+
+                if (row.value == null) {
                     td_1.textContent = "..";
                 } else {
-                    let decimals = result.dimension.STATISTIC.category.unit[stats_menu.value].decimals;
-                    td_1.textContent = values[j].toLocaleString("en-GB", {
+                    let decimals =
+                        result.dimension.STATISTIC.category.unit[stats_menu.value].decimals;
+
+                    td_1.textContent = row.value.toLocaleString("en-GB", {
                         minimumFractionDigits: decimals,
                         maximumFractionDigits: decimals
                     });
                 }
-                td_1.style = "text-align: right;"
-                if (["all", "ni", "n92000002"].includes(Object.keys(result.dimension[other_vars[i]].category.label)[j].toLowerCase())) {
-                    td_0.style = "font-weight: bold;"
-                    td_1.style = "text-align: right; font-weight: bold;"
-                }
-                tr.appendChild(td_1);
 
+                td_1.style = "text-align: right;";
+
+                if (
+                    ["ALL", "NI", "N92000002"].includes(
+                        row.code.toUpperCase()
+                    )
+                ) {
+                    td_0.style = "font-weight: bold;";
+                    td_1.style = "text-align: right; font-weight: bold;";
+                }
+
+                tr.appendChild(td_1);
                 table.appendChild(tr);
             }
 
